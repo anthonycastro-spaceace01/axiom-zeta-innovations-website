@@ -27,10 +27,15 @@
           <a href="index.html">Home</a>
           <a href="#services">Services</a>
           <a href="#infrastructure">Infrastructure</a>
-          <a href="#products">Products</a>
+          <a href="#products">Shop</a>
           <a href="#about">Why AZ</a>
           <a href="#contact">Contact</a>
         </nav>
+        <button class="cart-trigger" type="button" data-cart-open aria-haspopup="dialog" aria-controls="cart-drawer">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h2l2.2 10.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.5L20.5 7H6.2M10 20.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Zm8 0a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"/></svg>
+          <span>Inquiry cart</span>
+          <span class="cart-count" data-cart-count>0</span>
+        </button>
       </div>
     </header>
 
@@ -123,11 +128,7 @@
                 </ul>
                 <div class="service-action-row">
                   <span class="pricing-notice">Quotes on request &bull; Negotiable rates</span>
-                  <a
-                    class="button primary sm"
-                    href="mailto:anthony.castro@axiomzetainnovations.com?subject=MVP%20Blue%20Printing%20Quote%20Request"
-                    >Request Quote</a
-                  >
+                  <button class="button primary sm" type="button" data-add-to-cart data-product="MVP Blue Printing">Add to inquiry</button>
                 </div>
               </div>
             </article>
@@ -168,13 +169,7 @@
                 </ul>
                 <div class="service-action-row">
                   <span class="pricing-notice">Customizable &bull; Negotiable rates</span>
-                  <a
-                    class="button secondary sm"
-                    href="https://wa.me/13615167418?text=Hello%20Anthony,%20I'd%20like%20to%20inquire%20about%20Full%20Stack%20Web%20Development%20by%20Team%20Nexora."
-                    target="_blank"
-                    rel="noreferrer"
-                    >Discuss Development</a
-                  >
+                  <button class="button secondary sm" type="button" data-add-to-cart data-product="Full Stack Web Development">Add to inquiry</button>
                 </div>
               </div>
             </article>
@@ -247,7 +242,8 @@
         <div class="container">
           <div class="section-heading center">
             <p class="eyebrow">Product portfolio</p>
-            <h2>All Axiom Zeta products and solutions.</h2>
+            <h2>Shop Axiom Zeta products and solutions.</h2>
+            <p class="shop-intro">Build an inquiry with the systems you need. Every deployment is scoped around your operation.</p>
           </div>
 
           <div class="feature-strip">
@@ -265,6 +261,7 @@
                 A private, locally controlled computing environment designed to keep AI, data, and
                 digital tools under direct ownership rather than dependence on external cloud services.
               </p>
+              <button class="text-cart-action" type="button" data-add-to-cart data-product="Sovereign Vault">Add to inquiry <span aria-hidden="true">+</span></button>
             </article>
 
             <article class="info-card product-card">
@@ -274,6 +271,7 @@
                 An enterprise AI knowledge-infrastructure layer that grounds models in trusted data,
                 protects against drift, and keeps deployment secure, efficient, and auditable.
               </p>
+              <button class="text-cart-action" type="button" data-add-to-cart data-product="PhaseLock Suite">Add to inquiry <span aria-hidden="true">+</span></button>
             </article>
 
             <article class="info-card product-card">
@@ -283,6 +281,7 @@
                 The primary intelligence and strategy platform for analyzing markets, portfolios, DeFi
                 opportunities, risk, signals, and potential trades.
               </p>
+              <button class="text-cart-action" type="button" data-add-to-cart data-product="HYPERCROSS Nexus">Add to inquiry <span aria-hidden="true">+</span></button>
             </article>
 
             <article class="info-card product-card">
@@ -292,6 +291,7 @@
                 A constrained execution arm that receives approved instructions and performs limited,
                 controlled trade classes such as up/down and DeFi execution scenarios.
               </p>
+              <button class="text-cart-action" type="button" data-add-to-cart data-product="Hypercross Nexus Arm Xero">Add to inquiry <span aria-hidden="true">+</span></button>
             </article>
 
             <article class="info-card product-card">
@@ -301,6 +301,7 @@
                 A human-facing conversational intelligence layer that explains what the system sees,
                 interprets risk and signals, and helps users understand positions and proposed actions.
               </p>
+              <button class="text-cart-action" type="button" data-add-to-cart data-product="Ameterasu HCN Companion">Add to inquiry <span aria-hidden="true">+</span></button>
             </article>
 
             <article class="info-card product-card">
@@ -310,6 +311,7 @@
                 A higher-level orchestration and operating intelligence system designed to coordinate
                 tools, services, and local deployment workflows beyond a traditional chatbot model.
               </p>
+              <button class="text-cart-action" type="button" data-add-to-cart data-product="QuadraSeer">Add to inquiry <span aria-hidden="true">+</span></button>
             </article>
           </div>
         </div>
@@ -433,6 +435,21 @@
       </section>
     </main>
 
+    <div class="cart-overlay" data-cart-close></div>
+    <aside id="cart-drawer" class="cart-drawer" aria-label="Inquiry cart" aria-modal="true" role="dialog" aria-hidden="true">
+      <div class="cart-drawer-header">
+        <div>
+          <p class="eyebrow">Your selection</p>
+          <h2>Inquiry cart</h2>
+        </div>
+        <button class="icon-button" type="button" data-cart-close aria-label="Close inquiry cart">&times;</button>
+      </div>
+      <p class="cart-note">Pricing is tailored to your implementation. Send your selection for a direct quote.</p>
+      <ul class="cart-items" data-cart-items aria-live="polite"></ul>
+      <p class="empty-cart" data-empty-cart>Your cart is ready for an Axiom Zeta system.</p>
+      <a class="button primary cart-checkout" data-cart-checkout href="mailto:anthony.castro@axiomzetainnovations.com?subject=Axiom%20Zeta%20Inquiry">Request my quote</a>
+    </aside>
+
     <footer id="contact" class="site-footer">
       <div class="container footer-content">
         <div>
@@ -454,5 +471,54 @@
         </div>
       </div>
     </footer>
+    <script>
+      (() => {
+        const cart = [];
+        const drawer = document.querySelector('#cart-drawer');
+        const overlay = document.querySelector('.cart-overlay');
+        const items = document.querySelector('[data-cart-items]');
+        const count = document.querySelector('[data-cart-count]');
+        const empty = document.querySelector('[data-empty-cart]');
+        const checkout = document.querySelector('[data-cart-checkout]');
+
+        function renderCart() {
+          items.innerHTML = cart.map((product, index) => `<li><span>${product}</span><button type="button" data-remove="${index}" aria-label="Remove ${product}">&times;</button></li>`).join('');
+          count.textContent = cart.length;
+          empty.hidden = cart.length > 0;
+          checkout.classList.toggle('is-disabled', cart.length === 0);
+          checkout.setAttribute('aria-disabled', String(cart.length === 0));
+          const selection = cart.length ? `Hello Anthony,\n\nI would like a quote for:\n${cart.map(product => `- ${product}`).join('\n')}\n\nPlease contact me to discuss scope and pricing.` : 'Hello Anthony, I would like to learn more about Axiom Zeta solutions.';
+          checkout.href = `mailto:anthony.castro@axiomzetainnovations.com?subject=${encodeURIComponent('Axiom Zeta Quote Request')}&body=${encodeURIComponent(selection)}`;
+        }
+
+        function toggleCart(isOpen) {
+          drawer.classList.toggle('is-open', isOpen);
+          overlay.classList.toggle('is-open', isOpen);
+          drawer.setAttribute('aria-hidden', String(!isOpen));
+          document.body.classList.toggle('cart-is-open', isOpen);
+        }
+
+        document.querySelectorAll('[data-add-to-cart]').forEach(button => {
+          button.addEventListener('click', () => {
+            const product = button.dataset.product;
+            if (!cart.includes(product)) cart.push(product);
+            renderCart();
+            toggleCart(true);
+          });
+        });
+        document.querySelectorAll('[data-cart-open]').forEach(button => button.addEventListener('click', () => toggleCart(true)));
+        document.querySelectorAll('[data-cart-close]').forEach(button => button.addEventListener('click', () => toggleCart(false)));
+        items.addEventListener('click', event => {
+          const removeButton = event.target.closest('[data-remove]');
+          if (!removeButton) return;
+          cart.splice(Number(removeButton.dataset.remove), 1);
+          renderCart();
+        });
+        checkout.addEventListener('click', event => {
+          if (cart.length === 0) event.preventDefault();
+        });
+        renderCart();
+      })();
+    </script>
   </body>
 </html>
